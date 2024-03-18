@@ -6,9 +6,20 @@
     </head>
     <body bgcolor="#e8ffbf">
         <font face="arial">
-            <header bgcolor="#c8ff7e">
-                <h1><font color="darkgreen" size="12">WebPosts</font></h1>
-                <hr>
+            <header>
+                <svg height="80" width="500">
+                    <defs>
+                        <linearGradient id="grad1" gradientTransform="rotate(90)">
+                        <stop offset="0%" stop-color="darkseagreen" />
+                        <stop offset="100%" stop-color="darkgreen" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="10,40 30,10 150,10 170,40 150,70 30,70"
+                            style="fill:url(#grad1)" />
+                    <text fill="#ffffff" font-size="45" font-family="Arial" x="40" y="56">WP /</text>
+                    <text fill="darkgreen" font-size="45" font-family="Arial" x="180" y="56">WebPosts</text>
+                </svg>
+                <hr />
             </header>
             <a href="index.html">Página inicial</a>
             <main>
@@ -21,26 +32,27 @@
                         <li>Data de Nascimento: 15/03/2001</li>
                         <li>Email: usuario123@gmail.com</li>   
                     </ul>
+                    <a href="profile-change-account.html">Alterar</a>
                 </section>
-                <hr>
+                <hr />
                 <section>
                     <h3><b>Sobre você</b></h3>
-                    <form method="post" target="profile.html">
+                    <form action="profile.html">
                         <label>
                             Nome Real:
                             <input type="text">
                         </label>
-                        <br>
+                        <br />
                         <label>
                             Biografia:
                             <textarea></textarea>
                         </label>
-                        <br>
+                        <br />
                         <input type="reset" value="Limpar">
-                        <a href="profile.html">Salvar</a>
+                        <input type="submit" value="Salvar">
                     </form>
                 </section>
-                <hr>
+                <hr />
                 <section>
                     <h3><b>Estatística</b></h3>
                     <table border>
@@ -73,8 +85,24 @@
                         </tr>
                     </table>
                 </section>
-                <hr>
+                <hr />
             </main>
+            <footer>
+                <h4><font color="darkgreen">WebPosts</font></h4>
+                <address>
+                    Email de Contato: <a href="mailto:help@webposts.com">help@webposts.com</a>
+                    <br />
+                    Telefone de Contato: <a href="tel:+554683773827">(46) 8377-3827</a>
+                    <br />
+                    77018-524
+                    <br />
+                    Quadra 1005 Sul Alameda 26
+                    <br />
+                    Plano Diretor Sul
+                    <br />
+                    Palmas - TO
+                </address>
+            </footer>
         </font>
     </body>
 </html>

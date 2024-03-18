@@ -26,13 +26,22 @@
                 <h2>Seu perfil</h2>
                 <section>
                     <h3><b>Dados da Conta</b></h3>
-                    <ul>
-                        <li>Nome de Usuário: Usuário123</li>
-                        <li>Telefone: (99) 3262-0038</li>
-                        <li>Data de Nascimento: 15/03/2001</li>
-                        <li>Email: usuario123@gmail.com</li>
-                    </ul>
-                    <a href="profile-change-account.html">Alterar</a>
+                    <form action="profile.html">
+                        <label for="name">Nome de Usuário: </label>
+                        <input id="name" type="text" placeholder="João Cleiton" maxlength="30" required value="Usuário123">
+                        <br />
+                        <label for="phone">Telefone: </label>
+                        <input id="phone" type="tel" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" placeholder="(00) 90000-0000" value="(99) 3262-0038" required>
+                        <br />
+                        <label for="birthday">Data de Nascimento: </label>
+                        <input id="birthday" type="date" required value="2001-03-15">
+                        <br />
+                        <label for="email">Email: </label>
+                        <input type="email" placeholder="exemplo@email.com" required value="usuario123@gmail.com">
+                        <br />
+                        <input type="reset" value="Limpar">
+                        <input type="submit" value="Salvar">
+                    </form>
                 </section>
                 <hr />
                 <section>

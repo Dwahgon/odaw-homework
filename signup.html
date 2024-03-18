@@ -8,53 +8,81 @@
     <body bgcolor="#e8ffbf">
         <font face="arial">
             <header bgcolor="#c8ff7e">
-                <h1><font color="darkgreen" size="12">WebPosts</font></h1>
-                <hr>
+                <svg height="80" width="500">
+                    <defs>
+                        <linearGradient id="grad1" gradientTransform="rotate(90)">
+                        <stop offset="0%" stop-color="darkseagreen" />
+                        <stop offset="100%" stop-color="darkgreen" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="10,40 30,10 150,10 170,40 150,70 30,70"
+                            style="fill:url(#grad1)" />
+                    <text fill="#ffffff" font-size="45" font-family="Arial" x="40" y="56">WP /</text>
+                    <text fill="darkgreen" font-size="45" font-family="Arial" x="180" y="56">WebPosts</text>
+                </svg>
+                <hr />
             </header>
             <main>
                 <a href="index.html">Página inicial</a>
-                <br>
+                <br />
                 <form method="post">
                     <h2><b>Criar Conta</b></h2>
                     <label>
                         Nome de Usuário
-                        <input type="text" required>
+                        <input type="text" placeholder="João Cleiton" maxlength="30" required>
                     </label>
-                    <br>
+                    <br />
                     <label>
                         Telefone
-                        <input type="tel" required>
+                        <input type="tel" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" placeholder="(00) 90000-0000" required>
                     </label>
-                    <br>
+                    <br />
                     <label>
                         Data de Nascimento
                         <input type="date" required>
                     </label>
-                    <br>
+                    <br />
                     <label>
                         Email
-                        <input type="email" required>
+                        <input type="email" placeholder="exemplo@email.com" required>
                     </label>
-                    <br>
+                    <br />
                     <label>
                         Confirmar Email
-                        <input type="email" required>
+                        <input type="email" placeholder="exemplo@email.com" required>
                     </label>
-                    <br>
+                    <br />
                     <label>
                         Senha
                         <input type="password" minlength="8" required>
                     </label>
-                    <br>
+                    <br />
                     <label>
                         Confirmar Senha
                         <input type="password" minlength="8" required>
                     </label>
-                    <br>
+                    <br />
                     <input type="reset" value="Limpar">
                     <input type="submit" value="Criar Conta">
                 </form>
+                <hr />
             </main>
+            <footer>
+                <h4><font color="darkgreen">WebPosts</font></h4>
+                <address>
+                    Email de Contato: <a href="mailto:help@webposts.com">help@webposts.com</a>
+                    <br />
+                    Telefone de Contato: <a href="tel:+554683773827">(46) 8377-3827</a>
+                    <br />
+                    77018-524
+                    <br />
+                    Quadra 1005 Sul Alameda 26
+                    <br />
+                    Plano Diretor Sul
+                    <br />
+                    Palmas - TO
+                </address>
+            </footer>
         </font>
     </body>
 </html>
