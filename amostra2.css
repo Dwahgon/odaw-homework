@@ -6,8 +6,7 @@ H1 {
     background: darkseagreen;
     text-align: center;
     padding: 4pt;
-    border-top: inset;
-    border-bottom: inset;
+    border-style: solid;
     position: relative;
 }
 
@@ -115,10 +114,12 @@ PRE {
 .first {
     border-top: ridge;
     border-left: ridge;
+    border-width: thin;
     position: relative;
 }
 
 .last {
     border-bottom: ridge;
     border-right: ridge;
+    border-width: thin;
 }
