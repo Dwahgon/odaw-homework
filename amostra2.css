@@ -123,3 +123,14 @@ PRE {
     border-right: ridge;
     border-width: thin;
 }
+
+.highlight {
+    background-color: yellow;
+}
+
+.ufo {
+    font-family: monospace;
+    font-size: large;
+    color: green;
+    background-color: black;
+}
