@@ -1,0 +1,99 @@
+h1 {
+    font-size: xx-large;
+    font-family: 'Arial';
+    color: darkgreen;
+    background-color: darkseagreen;
+    border-right: dashed;
+    border-left: dashed;
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    font-size: x-large;
+    font-family: 'Arial';
+    font-style: italic;
+    color: orangered;
+    background-color: lightsalmon;
+    border-top: solid;
+    border-bottom: dashed;
+    text-align: left;
+    padding: 5px;
+}
+
+h3 {
+    font-size: large;
+    font-family: 'Arial';
+    color: purple;
+    background-color: lightcoral;
+    border-top: solid;
+    border-bottom: dashed;
+    border-left: inset;
+    border-right: dotted;
+    text-align: right;
+    padding: 1px;
+}
+
+.button-success {
+    color: white;
+    background-color: green;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    padding: 10px 40px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom: solid 20px darkgreen;
+    cursor: pointer;
+}
+
+.button-circle {
+    background-color: red;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: solid 10px darkred;
+}
+
+dialog {
+    border-radius: 4px;
+    border: 1px solid grey 4;
+    box-shadow: 5px 5px black;
+    padding: 0;
+    width: 200px;
+}
+
+.dialog-header{
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 0;
+}
+
+.dialog-h1 {
+    border: none;
+    color: black;
+    text-align: start;
+    background-color: transparent;
+    display: inline;
+    vertical-align: middle;
+}
+
+.dialog-close-button {
+    background: none;
+    font-size: 20px;
+    line-height: 20px;
+    border: 3px solid black;
+    border-radius: 100%;
+    width: 1.7em;
+    height: 1.7em;
+    vertical-align: middle;
+    cursor: pointer;
+    float: right;
+}
+
+.dialog-main {
+    padding: 10px
+}
