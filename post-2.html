@@ -4,107 +4,109 @@
     <head>
         <title>WebPosts</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="index.css" type="text/css">
     </head>
-    <body bgcolor="#e8ffbf">
-        <font face="arial">
-            <header>
-                <svg height="80" width="500">
+    <body>
+        <header>
+            <a href="index.html">
+                <svg height="50" width="350">
                     <defs>
                         <linearGradient id="grad1" gradientTransform="rotate(90)">
                         <stop offset="0%" stop-color="darkseagreen" />
                         <stop offset="100%" stop-color="darkgreen" />
                         </linearGradient>
                     </defs>
-                    <polygon points="10,40 30,10 150,10 170,40 150,70 30,70"
-                            style="fill:url(#grad1)" />
-                    <text fill="#ffffff" font-size="45" font-family="Arial" x="40" y="56">WP /</text>
-                    <text fill="darkgreen" font-size="45" font-family="Arial" x="180" y="56">WebPosts</text>
+                    <polygon points="5,25 20,5 100,5 120,25 100,45 20,45"
+                            style="fill: url(#grad1); stroke-width: 4px; stroke: white;" />
+                    <text fill="white" font-size="36" font-family="Times New Roman, Times, serif" x="20" y="38">WP /</text>
+                    <text fill="white" font-size="36" font-family="Times New Roman, Times, serif" x="130" y="38">WebPosts</text>
                 </svg>
-                <hr />
-            </header>
-            <main>
-                <a href="index.html">Página inicial</a>
-                <br />
+            </a>
+            <nav>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Criar Conta</a>
+                <a href="profile.html">Meu Perfil</a>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <h2>Formei pessoal!!</h2>
+                <h3><i>Por BrunoExplora</i></h3>
                 <a href="#comments">Pular para comentários</a>
-                <article>
-                    <h2>Formei pessoal!!</h2>
-                    <h3><i>Por BrunoExplora</i></h3>
-                    <p>Hoje, um capítulo incrível da minha jornada chegou ao seu ápice: minha formatura! 🎓✨ É difícil expressar em palavras a mistura de emoções que estou sentindo neste momento. É uma combinação de alegria, gratidão, e um toque de nostalgia.</p>
-                    <p>Quando olho para trás, vejo todas as noites em claro estudando, os desafios que enfrentei, as amizades que fiz, e as experiências que me moldaram. Cada momento foi uma peça fundamental no quebra-cabeça da minha jornada acadêmica. Hoje, todas essas peças se encaixaram, e o quadro final é simplesmente incrível.</p>
-                    <p>Esta jornada não foi apenas sobre adquirir conhecimento, mas também sobre autodescoberta. Descobri tanto sobre mim mesmo ao longo desses anos. Aprendi sobre minhas paixões, minhas habilidades e até mesmo sobre minhas fraquezas. E, acima de tudo, aprendi que a perseverança e a determinação podem levar você a lugares que você nunca imaginou.</p>
-                    <p>Gostaria de expressar minha mais profunda gratidão a todos que estiveram ao meu lado durante esta jornada. À minha família, por seu amor incondicional e apoio constante. Aos meus amigos, por suas palavras de encorajamento e por compartilharem comigo cada momento desta jornada. Aos meus professores e mentores, por seu conhecimento, orientação e inspiração.</p>
-                    <p>Esta conquista não é apenas minha; é de todos nós que caminhamos juntos ao longo desses anos. Hoje, compartilho este diploma com cada pessoa que tocou minha vida de alguma forma.</p>
-                    <p>Enquanto fecho este capítulo da minha vida, estou emocionado para começar o próximo. Sei que há muitas aventuras e desafios à frente, mas estou pronto para enfrentá-los de frente, com confiança e determinação.</p>
-                    <p>Então, aqui está para novos começos, para sonhos realizados, e para a jornada que está apenas começando. Obrigado a todos por fazerem parte deste capítulo inesquecível da minha vida. Vamos celebrar! 🎉🎓 #Formatura #NovoCapítulo #Gratidão</p>
-                </article>
+                <p>Hoje, um capítulo incrível da minha jornada chegou ao seu ápice: minha formatura! 🎓✨ É difícil expressar em palavras a mistura de emoções que estou sentindo neste momento. É uma combinação de alegria, gratidão, e um toque de nostalgia.</p>
+                <p>Quando olho para trás, vejo todas as noites em claro estudando, os desafios que enfrentei, as amizades que fiz, e as experiências que me moldaram. Cada momento foi uma peça fundamental no quebra-cabeça da minha jornada acadêmica. Hoje, todas essas peças se encaixaram, e o quadro final é simplesmente incrível.</p>
+                <p>Esta jornada não foi apenas sobre adquirir conhecimento, mas também sobre autodescoberta. Descobri tanto sobre mim mesmo ao longo desses anos. Aprendi sobre minhas paixões, minhas habilidades e até mesmo sobre minhas fraquezas. E, acima de tudo, aprendi que a perseverança e a determinação podem levar você a lugares que você nunca imaginou.</p>
+                <p>Gostaria de expressar minha mais profunda gratidão a todos que estiveram ao meu lado durante esta jornada. À minha família, por seu amor incondicional e apoio constante. Aos meus amigos, por suas palavras de encorajamento e por compartilharem comigo cada momento desta jornada. Aos meus professores e mentores, por seu conhecimento, orientação e inspiração.</p>
+                <p>Esta conquista não é apenas minha; é de todos nós que caminhamos juntos ao longo desses anos. Hoje, compartilho este diploma com cada pessoa que tocou minha vida de alguma forma.</p>
+                <p>Enquanto fecho este capítulo da minha vida, estou emocionado para começar o próximo. Sei que há muitas aventuras e desafios à frente, mas estou pronto para enfrentá-los de frente, com confiança e determinação.</p>
+                <p>Então, aqui está para novos começos, para sonhos realizados, e para a jornada que está apenas começando. Obrigado a todos por fazerem parte deste capítulo inesquecível da minha vida. Vamos celebrar! 🎉🎓 #Formatura #NovoCapítulo #Gratidão</p>
+            </article>
+            <section class="comments">
+                <h2 id="comments">Comentários:</h2>
+                <hr />
+                <form>
+                    <h3>Deixe um comentário</h3>
+                    <textarea maxlength="300"></textarea>
+                    <input type="reset" value="Limpar">
+                    <input type="submit" value="Enviar">
+                </form>
+                <hr />
                 <section>
-                    <h2 id="comments">Comentários:</h2>
-                    <hr />
-                    <form>
-                        <h3>Deixe um comentário</h3>
-                        <textarea maxlength="300"></textarea>
-                        <input type="reset" value="Limpar">
-                        <input type="submit" value="Enviar">
-                    </form>
-                    <hr />
-                    <section>
-                        <h3><i>Usuário: JaneraFera</i></h3>
-                        <p>Parabéns, Bruno! Estou tão orgulhoso de você por alcançar este marco incrível. Mal posso esperar para ver o que o futuro reserva para você. 🌟</p>
-                    </section>
-                    <hr />
-                    <section>
-                        <h3><i>Usuário: Bertoles</i></h3>
-                        <p>Que momento emocionante, Bruno! Sua dedicação e trabalho árduo realmente valeram a pena. Estou inspirado pela sua conquista! 💪</p>
-                    </section>
-                    <hr />
-                    <section>
-                        <h3><i>Usuário: Pamelona</i></h3>
-                        <p>Wow, Bruno! É incrível ver como você cresceu ao longo dos anos. Parabéns pela formatura e desejo-lhe todo o sucesso no próximo capítulo da sua vida. 🚀</p>
-                    </section>
-                    <hr />
-                    <section>
-                        <h3><i>Usuário: JaquesSolto</i></h3>
-                        <p>Parabéns, Bruno! Esta é apenas a primeira de muitas grandes conquistas que virão para você. Continue brilhando! ✨</p>
-                    </section>
-                    <hr />
-                    <section>
-                        <h3><i>Usuário: PessoaNormal</i></h3>
-                        <p>o cara faz um post sobre a formatura dele e nem mandou foto. sera q a ia que gerou isso teve dificuldades de gerar a mão segurando o canudo? 🤔</p>
-                    </section>
-                    <hr />
-                    <section>
-                        <h3><i>Usuário: PessoaNormal</i></h3>
-                        <p>e quem tem nome de brunoexplora? maluco fez faculdade da dora a exploradora?</p>
-                    </section>
-                    <hr />
-                    <section>
-                        <h3><i>Usuário: BrunoExplora</i></h3>
-                        <p>Olá PessoaNormal, obrigado pelo seu comentário! Fico feliz que tenha apreciado o post. Embora eu entenda suas suspeitas, quero garantir que este é um momento genuíno para mim. A jornada até a formatura foi longa e cheia de desafios, e estou verdadeiramente emocionado por compartilhar este marco com amigos e familiares. Se tiver alguma dúvida ou quiser conversar mais sobre isso, estou aqui. Obrigado pela sua interação e apoio!</p>
-                    </section>
-                    <hr />
-                    <section>
-                        <h3><i>Usuário: PessoaNormal</i></h3>
-                        <p>o cara não erra um acento, deve ter se formado em letras</p>
-                    </section>
-                    <hr />
+                    <h3><i>Usuário: JaneraFera</i></h3>
+                    <p>Parabéns, Bruno! Estou tão orgulhoso de você por alcançar este marco incrível. Mal posso esperar para ver o que o futuro reserva para você. 🌟</p>
                 </section>
-            </main>
-            <footer>
-                <h4><font color="darkgreen">WebPosts</font></h4>
-                <address>
-                    Email de Contato: <a href="mailto:help@webposts.com">help@webposts.com</a>
-                    <br />
-                    Telefone de Contato: <a href="tel:+554683773827">(46) 8377-3827</a>
-                    <br />
-                    77018-524
-                    <br />
-                    Quadra 1005 Sul Alameda 26
-                    <br />
-                    Plano Diretor Sul
-                    <br />
-                    Palmas - TO
-                </address>
-            </footer>
-        </font>
+                <hr />
+                <section>
+                    <h3><i>Usuário: Bertoles</i></h3>
+                    <p>Que momento emocionante, Bruno! Sua dedicação e trabalho árduo realmente valeram a pena. Estou inspirado pela sua conquista! 💪</p>
+                </section>
+                <hr />
+                <section>
+                    <h3><i>Usuário: Pamelona</i></h3>
+                    <p>Wow, Bruno! É incrível ver como você cresceu ao longo dos anos. Parabéns pela formatura e desejo-lhe todo o sucesso no próximo capítulo da sua vida. 🚀</p>
+                </section>
+                <hr />
+                <section>
+                    <h3><i>Usuário: JaquesSolto</i></h3>
+                    <p>Parabéns, Bruno! Esta é apenas a primeira de muitas grandes conquistas que virão para você. Continue brilhando! ✨</p>
+                </section>
+                <hr />
+                <section>
+                    <h3><i>Usuário: PessoaNormal</i></h3>
+                    <p>o cara faz um post sobre a formatura dele e nem mandou foto. sera q a ia que gerou isso teve dificuldades de gerar a mão segurando o canudo? 🤔</p>
+                </section>
+                <hr />
+                <section>
+                    <h3><i>Usuário: PessoaNormal</i></h3>
+                    <p>e quem tem nome de brunoexplora? maluco fez faculdade da dora a exploradora?</p>
+                </section>
+                <hr />
+                <section>
+                    <h3><i>Usuário: BrunoExplora</i></h3>
+                    <p>Olá PessoaNormal, obrigado pelo seu comentário! Fico feliz que tenha apreciado o post. Embora eu entenda suas suspeitas, quero garantir que este é um momento genuíno para mim. A jornada até a formatura foi longa e cheia de desafios, e estou verdadeiramente emocionado por compartilhar este marco com amigos e familiares. Se tiver alguma dúvida ou quiser conversar mais sobre isso, estou aqui. Obrigado pela sua interação e apoio!</p>
+                </section>
+                <hr />
+                <section>
+                    <h3><i>Usuário: PessoaNormal</i></h3>
+                    <p>o cara não erra um acento, deve ter se formado em letras</p>
+                </section>
+            </section>
+        </main>
+        <footer>
+            <h4>WebPosts</h4>
+            <address>
+                Email de Contato: <a href="mailto:help@webposts.com">help@webposts.com</a>
+                <br />
+                Telefone de Contato: <a href="tel:+554683773827">(46) 8377-3827</a>
+                <br />
+                77018-524
+                <br />
+                Quadra 1005 Sul Alameda 26
+                <br />
+                Plano Diretor Sul
+                <br />
+                Palmas - TO
+            </address>
+        </footer>
     </body>
 </html>

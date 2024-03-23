@@ -1,0 +1,78 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #e8ffbf;
+    margin: 0;
+}
+
+header {
+    background-color: darkgreen;
+    padding: 5px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header svg {
+    vertical-align: bottom;
+}
+
+header > nav > a {
+    margin: 0 10px;
+    color: white;
+    font-size: x-large;
+    background-color: #007400;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+main {
+    margin: 10px 20% 0; 
+}
+
+footer {
+    border: 2px solid #bdd495;
+    border-width: 2px 0 0;
+    margin-top: 10px;
+    padding: 0 30px;
+}
+
+footer > h4 {
+    color: darkgreen;
+}
+
+.comments, article {
+    border: 1px #bdd495 solid;
+    border-radius: 10px;
+    background-color: #ebfdca;
+}
+
+.comments > section, .comments > h2, .comments > form, article {
+    padding: 0 20px;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+article img, article video, article audio {
+    display: block;
+    margin: 5px auto;
+}
+
+article video {
+    width: 100%;
+}
+
+.statistics-table{
+    margin: 0 auto;
+}
+
+.statistics-table, .statistics-table td, .statistics-table th  {
+    border: 1px outset black;
+}

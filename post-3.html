@@ -5,67 +5,69 @@
 <head>
     <title>WebPosts</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 
-<body bgcolor="#e8ffbf">
-    <font face="arial">
-        <header>
-            <svg height="80" width="500">
+<body>
+    <header>
+        <a href="index.html">
+            <svg height="50" width="350">
                 <defs>
                     <linearGradient id="grad1" gradientTransform="rotate(90)">
                     <stop offset="0%" stop-color="darkseagreen" />
                     <stop offset="100%" stop-color="darkgreen" />
                     </linearGradient>
                 </defs>
-                <polygon points="10,40 30,10 150,10 170,40 150,70 30,70"
-                        style="fill:url(#grad1)" />
-                <text fill="#ffffff" font-size="45" font-family="Arial" x="40" y="56">WP /</text>
-                <text fill="darkgreen" font-size="45" font-family="Arial" x="180" y="56">WebPosts</text>
+                <polygon points="5,25 20,5 100,5 120,25 100,45 20,45"
+                        style="fill: url(#grad1); stroke-width: 4px; stroke: white;" />
+                <text fill="white" font-size="36" font-family="Times New Roman, Times, serif" x="20" y="38">WP /</text>
+                <text fill="white" font-size="36" font-family="Times New Roman, Times, serif" x="130" y="38">WebPosts</text>
             </svg>
-            <hr />
-        </header>
-        <main>
-            <a href="index.html">Página inicial</a>
-            <br />
+        </a>
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Criar Conta</a>
+            <a href="profile.html">Meu Perfil</a>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h2>HTML in 100 Seconds</h2>
+            <h3><i>Por Fireship</i></h3>
             <a href="#comments">Pular para comentários</a>
-            <article>
-                <h2>HTML in 100 Seconds</h2>
-                <h3><i>Por Fireship</i></h3>
-                <video controls="true">
-                    <source src="HTML in 100 Seconds-ok-plXXHlWw.mp4" />
-                </video>
-                <p>Audio only:</p>
-                <audio src="audiotrack.m4a" controls="true">
-            </article>
-            <section>
-                <h2 id="comments">Comentários:</h2>
-                <hr />
-                <form>
-                    <h3>Deixe um comentário</h3>
-                    <textarea maxlength="300"></textarea>
-                    <input type="reset" value="Limpar">
-                    <input type="submit" value="Enviar">
-                </form>
-                <hr />
-            </section>
-        </main>
-        <footer>
-            <h4><font color="darkgreen">WebPosts</font></h4>
-            <address>
-                Email de Contato: <a href="mailto:help@webposts.com">help@webposts.com</a>
-                <br />
-                Telefone de Contato: <a href="tel:+554683773827">(46) 8377-3827</a>
-                <br />
-                77018-524
-                <br />
-                Quadra 1005 Sul Alameda 26
-                <br />
-                Plano Diretor Sul
-                <br />
-                Palmas - TO
-            </address>
-        </footer>
-    </font>
+            <video controls="true">
+                <source src="HTML in 100 Seconds-ok-plXXHlWw.mp4" />
+            </video>
+            <p>Audio only:</p>
+            <audio src="audiotrack.m4a" controls="true">
+        </article>
+        <section class="comments">
+            <h2 id="comments">Comentários:</h2>
+            <hr />
+            <form>
+                <h3>Deixe um comentário</h3>
+                <textarea maxlength="300"></textarea>
+                <input type="reset" value="Limpar">
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <h4>WebPosts</h4>
+        <address>
+            Email de Contato: <a href="mailto:help@webposts.com">help@webposts.com</a>
+            <br />
+            Telefone de Contato: <a href="tel:+554683773827">(46) 8377-3827</a>
+            <br />
+            77018-524
+            <br />
+            Quadra 1005 Sul Alameda 26
+            <br />
+            Plano Diretor Sul
+            <br />
+            Palmas - TO
+        </address>
+    </footer>
 </body>
 
 </html>
