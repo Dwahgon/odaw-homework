@@ -1,0 +1,146 @@
+<!-- Autor: Kawan Moreira Weege -->
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <title>Exercicio 7</title>
+    <style>
+        th {
+            text-align: left;
+        }
+    </style>
+    <script>
+        function changeCase(uppercase) {
+            const form = document.forms[0];
+            ['name', 'home', 'pet']
+                .map(fieldName => form.elements.namedItem(fieldName))
+                .forEach(field => field.value = uppercase ? field.value.toUpperCase() : field.value.toLowerCase());
+            ['to-uppercase', 'to-lowercase']
+                .forEach(fieldName => form.elements.namedItem(fieldName).checked = false);
+        }
+
+        function checkRequiredFields(form) {
+            const emptyFields = [...form.elements]
+                .filter(el => !el.value && el.type != 'submit')
+                .map(el => el.labels[0].innerText.replace(':', '').trim());
+            alert(emptyFields.length ? `Erro - os seguintes campos obrigatórios não foram preenchidos: ${emptyFields.join(', ')}` : 'Sucesso');
+            return emptyFields.length == 0;
+        }
+
+        function promptGreetUser() {
+            const name = prompt("Qual o seu nome?");
+            const today = new Date();
+            const hour = today.getHours();
+            const greetTime = 6 <= hour && hour < 12 ? 'Bom dia'
+                : 12 <= hour && hour < 18 ? 'Boa tarde'
+                    : 'Boa noite'
+            alert(`${greetTime}, ${name}, hoje é: ${today.toLocaleDateString('pt-br', { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric', })}`)
+        }
+
+        let isHoldingMouse = false
+
+
+        function draw(ev) {
+            if (!isHoldingMouse) return
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+
+            ctx.fillRect(ev.offsetX - 1, ev.offsetY - 1, 3, 3);
+        }
+
+        function clearCanvas() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, 300, 300);
+        }
+    </script>
+</body>
+
+<body>
+    <section>
+        <h1>Exercicio 7 - Questão 1</h1>
+        <p>Faça um formulário com 3 campos de texto, alterar para letras maiúsculas e minúsculas através de checkbox.
+            Ver exemplo 6.</p>
+        <form>
+            <table id="assignment-form">
+                <tbody>
+                    <tr>
+                        <th><label for="name">Qual o seu nome?: </label></th>
+                        <td><input name="name" id="name" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="home">Onde você mora?: </label></th>
+                        <td><input name="home" id="home" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="pet">Qual o nome do seu pet?: </label></th>
+                        <td><input name="pet" id="pet" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="to-uppercase" type="checkbox" value="uppercase"
+                                onchange="if(this.checked) changeCase(true)">
+                            <label for="to-uppercase">Letras maiúsculas</label>
+                        </td>
+                        <td>
+                            <input id="to-lowercase" type="checkbox" value="lowercase"
+                                onchange="if(this.checked) changeCase(false)">
+                            <label for="to-lowercase">Letras minúsculas</label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </section>
+
+    <section>
+        <h1>Exercicio 7 - Questão 2</h1>
+        <p>Crie um formulário com 4 campos, sendo todos obrigatórios. Na submissão, verificar se os dados obrigatórios
+            foram informados, mostre o Erro ocorrido ou 'Sucesso' através de janela alert. Ver exemplo 10.</p>
+        <form method="POST" onsubmit="return checkRequiredFields(this)">
+            <table>
+                <tbody>
+                    <tr>
+                        <th><label for="username">Nome de usuário: </label></th>
+                        <td><input name="username" id="username" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="phone">Telefone: </label></th>
+                        <td><input name="phone" id="phone" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="email">Email: </label></th>
+                        <td><input name="email" id="email" type="email"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="password">Senha: </label></th>
+                        <td><input name="password" id="password" type="password"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </section>
+
+    <section>
+        <h1>Exercicio 7 - Questão 3</h1>
+        <p>Ler o nome do usuário (via prompt) e imprimir a mensagem:
+            "Bom dia, boa tarde ou boa noite (de acordo com o horário atual), NOME INFORMADO, hoje é: dia da semana,
+            dia/mês/ano."
+            Ex. Boa Tarde, Maria, hoje é terça-feira, 04/04/2024.</p>
+        <button onclick="promptGreetUser()">Clique aqui!</button>
+    </section>
+
+    <section>
+        <h1>Exercicio 7 - Questão 4</h1>
+        <p>Crie um exemplo livre de uso de Javascript, baseado no material estudado.</p>
+        <canvas width="300" height="300" id="canvas" style="border: 1px solid black;" onmousemove="draw(event)"
+            onmousedown="isHoldingMouse=true" onmouseup="isHoldingMouse=false"></canvas>
+        <button onclick="clearCanvas()">Limpar</button>
+    </section>
+</body>
+
+</html>
