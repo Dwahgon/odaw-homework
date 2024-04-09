@@ -8,6 +8,102 @@
         type="text/css">
 </head>
 
+<script>
+    function editAccount() {
+        const accountInfo = document.getElementById("account-info");
+        const accountInfoUl = accountInfo.querySelector('ul');
+
+        const username = accountInfoUl.children[0].innerHTML.replace("Nome de Usuário: ", "");
+        const phone = accountInfoUl.children[1].innerHTML.replace("Telefone: ", "");
+        const birthday = accountInfoUl.children[2].innerHTML
+            .replace("Data de Nascimento: ", "")
+            .split('/')
+            .reverse()
+            .join('-')
+        const email = accountInfoUl.children[3].innerHTML.replace("Email: ", "");
+
+        accountInfo.innerHTML = `<form method="post" onsubmit="return editAccountSubmit(this)">
+            <h3><b>Dados da Conta</b></h3>
+            <div class="mb-3">
+                <label for="username" class="form-label">Nome de Usuário</label>
+                <input id="username" class="form-control" value="${username}" placeholder="João Cleiton">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Telefone</label>
+                <input id="phone" type="tel" class="form-control" pattern="\\(\\d{2}\\) \\d{4,5}-\\d{4}" value="${phone}"
+                    placeholder="(47) 90000-0000">
+            </div>
+            <div class="mb-3">
+                <label for="birthday" class="form-label">Data de Nascimento</label>
+                <input id="birthday" type="date" class="form-control" value="${birthday}">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" type="email" class="form-control" value="${email}"
+                    placeholder="exemplo@email.com">
+            </div>
+            <div class="d-flex gap-3">
+                <input class="btn btn-outline-success" type="reset" value="Redefinir">
+                <input class="btn btn-success" type="submit" value="Enviar">
+            </div>
+        </form>`
+    }
+
+    function editAccountSubmit(form) {
+        const accountInfo = document.getElementById("account-info");
+
+        accountInfo.innerHTML = `<h3><b>Dados da Conta</b></h3>
+            <ul id="account-info" class="mb-3">
+                <li>Nome de Usuário: ${form.username.value}</li>
+                <li>Telefone: ${form.phone.value}</li>
+                <li>Data de Nascimento: ${form.birthday.value.split('-').reverse().join('/')}</li>
+                <li>Email: ${form.email.value}</li>
+            </ul>
+            <button id="change-account-info" type="button" class="btn btn-success"
+                onclick="editAccount()">Alterar</button>`
+
+        return false;
+    }
+
+    function editAbout() {
+        const about = document.getElementById("about");
+        const aboutUl = about.querySelector('ul');
+
+        const realname = aboutUl.children[0].innerHTML.replace("Nome Real: ", "");
+        const biography = aboutUl.children[1].innerHTML.replace("Biografia: ", "");
+
+        about.innerHTML = `<form method="post" onsubmit="editAboutSubmit(this)">
+            <h3><b>Sobre você</b></h3>
+            <div class="mb-3">
+                <label for="real-name" class="form-label">Nome Real</label>
+                <input id="real-name" class="form-control" value="${realname}" placeholder="João Cleiton">
+            </div>
+            <div class="mb-3">
+                <label for="biography" class="form-label">Biografia</label>
+                <textarea id="biography" maxlength="300" class="form-control mb-3"
+                    placeholder="Deixe um comentário!">${biography}</textarea>
+            </div>
+            <div class="d-flex gap-3">
+                <input class="btn btn-outline-success" type="reset" value="Redefinir">
+                <input class="btn btn-success" type="submit" value="Enviar">
+            </div>
+        </form>`
+    }
+
+    function editAboutSubmit(form) {
+        const about = document.getElementById("about");
+
+        about.innerHTML = `<h3><b>Sobre você</b></h3>
+            <ul class="mb-3">
+                <li>Nome Real: ${form['real-name'].value}</li>
+                <li>Biografia: ${form.biography.value}</li>
+            </ul>
+            <a class="btn btn-success" onclick="editAbout()">Alterar</a>`
+
+        return false;
+    }
+</script>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-success-subtle" data-bs-theme="dark">
@@ -59,27 +155,24 @@
         <div class="card">
             <h2 class="card-header">Seu perfil</h2>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">
+                <li id="account-info" class="list-group-item">
                     <h3><b>Dados da Conta</b></h3>
-                    <ul class="mb-3">
+                    <ul id="account-info" class="mb-3">
                         <li>Nome de Usuário: Usuário123</li>
                         <li>Telefone: (99) 3262-0038</li>
                         <li>Data de Nascimento: 15/03/2001</li>
                         <li>Email: usuario123@gmail.com</li>
                     </ul>
-                    <a class="btn btn-success" href="profile-change-account.html">Alterar</a>
+                    <button id="change-account-info" type="button" class="btn btn-success"
+                        onclick="editAccount()">Alterar</button>
                 </li>
-                <li class="list-group-item">
+                <li id="about" class="list-group-item">
                     <h3><b>Sobre você</b></h3>
                     <ul class="mb-3">
-                        <li>
-                            Nome Real: John Doe
-                        </li>
-                        <li>
-                            Biografia: Olá, sou John Doe.
-                        </li>
+                        <li>Nome Real: John Doe</li>
+                        <li>Biografia: Olá, sou John Doe.</li>
                     </ul>
-                    <a class="btn btn-success" href="profile-change-about.html">Alterar</a>
+                    <a class="btn btn-success" onclick="editAbout()">Alterar</a>
                 </li>
                 <li class="list-group-item">
                     <h3><b>Estatística</b></h3>
