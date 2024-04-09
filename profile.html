@@ -102,6 +102,12 @@
 
         return false;
     }
+
+    function updateProfilePicture(input) {
+        const profilePicture = document.getElementById('profile-picture');
+        profilePicture.src = URL.createObjectURL(input.files[0]);
+        input.value = '';
+    }
 </script>
 
 <body>
@@ -155,6 +161,16 @@
         <div class="card">
             <h2 class="card-header">Seu perfil</h2>
             <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <img id="profile-picture" class="d-block mx-auto mb-2 rounded-circle" width="200" height="200"
+                        src="https://static.vecteezy.com/system/resources/previews/009/292/244/original/default-avatar-icon-of-social-media-user-vector.jpg">
+
+                    <div class="mb-3 mx-auto w-25">
+                        <label for="formFile" class="form-label">Atualizar Foto de Perfil</label>
+                        <input class="form-control" type="file" accept="image/png, image/jpeg"
+                            onchange="updateProfilePicture(this)">
+                    </div>
+                </li>
                 <li id="account-info" class="list-group-item">
                     <h3><b>Dados da Conta</b></h3>
                     <ul id="account-info" class="mb-3">
