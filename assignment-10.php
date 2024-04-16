@@ -106,33 +106,74 @@
             </form>
         </section>
         <section>
-            <h1>Exercicio 10 - Questão 2</h1>
-            <p>Validar usuário e senha (login) com as informações de um arquivo 'autenticacao.txt'.</p>
-            
+            <h1>Exercicio 10 - Questão 2 e 3</h1>
+            <p>2 - Validar usuário e senha (login) com as informações de um arquivo 'autenticacao.txt'.</p>
+            <p>3 - Pesquise e teste uma forma de cifrar e validar uma senha/informação qualquer.</p>
+
             <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit-form-2'])) {
-                    $file = fopen("autenticacao.txt", "r");
-                    $fileStr = fread($file, filesize("autenticacao.txt"));
-                    $userRegs = explode("\n\n", $fileStr);
-                    $success = false;
-
-                    foreach ($userRegs as $userReg) {
-                        [$user, $pw] = explode("\n", $userReg);
-                        if (($_POST['user'] == $user) && ($_POST['password'] == $pw)){
-                            $success = true;
-                            break;
-                        }
-                    }
-
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit-form-signup'])) {
+                    $file = fopen("autenticacao.txt", "a");
+                    $user = $_POST["user"];
+                    $password = hash("sha256", $_POST["password"]);
+                    fwrite($file, "$user\n$password\n\n");
+                    fclose($file);
                     ?>
-                        <div class="<?= $success ? "success" : "error" ?>">
+                        <span class="success">
+                            Usuário cadastrado com sucesso
+                        </span>
+                    <?php
+                }
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit-form-login'])) {
+                    $loginuser = $_POST["user"];
+                    $loginpassword = hash("sha256", $_POST["password"]);
+                    $success = false;
+                    if (filesize("autenticacao.txt") > 0){
+                        $file = fopen("autenticacao.txt", "r");
+                        $fileStr = fread($file, filesize("autenticacao.txt"));
+                        $userRegs = array_filter(explode("\n\n", $fileStr), function($s){ return strlen($s) != 0; });
+
+                        foreach ($userRegs as $userReg) {
+                            [$user, $pw] = explode("\n", $userReg);
+                            if (($loginuser == $user) && ($loginpassword == $pw)){
+                                $success = true;
+                                break;
+                            }
+                        }
+                        fclose($file);
+                    }
+                    ?>
+                        <span class="<?= $success ? "success" : "error" ?>">
                             <?= $success ? "Acesso autorizado" : "Acesso negado" ?>
-                        </div>
-                    <?php 
+                        </span>
+                    <?php
                 }
             ?>
 
+            <div style="display: flex">
+
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <h2>Cadastrar:</h2>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label for="user">Usuário:</label></td>
+                                <td><input id="user" type="text" name="user"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="password">Senha:</label></td>
+                                <td><input id="password" type="password" name="password"></td>
+                            </tr>
+                            <td>
+                                <td><input type="submit" name="submit-form-signup"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <h2>Validar:</h2>
                 <table>
                     <tbody>
                         <tr>
@@ -140,38 +181,15 @@
                             <td><input id="user" type="text" name="user"></td>
                         </tr>
                         <tr>
-                            <td><label for="password">Password:</label></td>
+                            <td><label for="password">Senha:</label></td>
                             <td><input id="password" type="password" name="password"></td>
                         </tr>
                         <td>
-                            <td><input type="submit" name="submit-form-2"/></td>
+                            <td><input type="submit" name="submit-form-login"/></td>
                         </tr>
                     </tbody>
                 </table>
             </form>
-        </section>
-        <section>
-            <h1>Exercicio 10 - Questão 3</h1>
-            <p>Pesquise e teste uma forma de cifrar e validar uma senha/informação qualquer.</p>
-
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td><label for="message">Mensagem a cifrar:</label></td>
-                            <td><input id="message" type="text" name="message"></td>
-                        </tr>
-                        <td>
-                            <td><input type="submit" name="submit-form-3"/></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
-            Mensagem Cifrada:
-            <p>
-                <?= $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit-form-3']) ? hash('sha256', $_POST['message']) : '' ?>
-            </p>
-                
         </section>
     </body>
 </html>
