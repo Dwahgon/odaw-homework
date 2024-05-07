@@ -1,0 +1,17 @@
+create database exercicio11;
+use exercicio11;
+create table usuarios (id int primary key auto_increment, nome varchar(100), email char(25), senha varchar(256), datanasc date);
+insert into usuarios values (NULL, "Joao Vitor", "joao.vitor@email.com", "AAAAAAA", "2000-01-01");
+insert into usuarios values (NULL, "Maria Silva", "maria.silva@email.com", "BBBBBBB", "2002-05-06");
+insert into usuarios values (NULL, "Januario", "januario@email.com", "CCCCCCC", "2003-03-03");
+update usuarios set senha="uma senha muito segura" where nome="Joao Vitor";
+update usuarios set nome="Januario da Silva" where nome="Januario";
+update usuarios set datanasc="1984-01-03" where nome="Maria Silva";
+select email, nome from usuarios;
+select nome,datanasc from usuarios where datanasc >= "2000-01-01";
+select * from usuarios where email="joao.vitor@email.com" AND senha="uma senha muito segura";
+select * from usuarios where email="joao.vitor@email.com" AND senha="AAAAAAA";
+delete from usuarios where datanasc < "2000-01-01";
+delete from usuarios where email="januario@email.com";
+drop table usuarios;
+drop database exercicio11;
